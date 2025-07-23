@@ -58,7 +58,7 @@ def play_audio(song_info, loop=False):
         player.set_media(media)
         player.play()
 
-        print("\n▶️ Playing... Press 'p' to pause/resume, 's' to stop.")
+        print("\n Playing... Press 'p' to pause/resume, 's' to stop.")
         paused = False
         
         # Inner loop for playback and key press checking
@@ -69,18 +69,18 @@ def play_audio(song_info, loop=False):
                 if char == 'p':
                     player.pause()
                     paused = not paused
-                    status = "⏸️ Paused" if paused else "▶️ Playing"
+                    status = " Paused" if paused else " Playing"
                     print(f"\r{status}...", end="")
                 elif char == 's':
                     player.stop()
-                    print("\n⏹️ Playback stopped.")
+                    print("\n Playback stopped.")
                     return True # User stopped the song
         
         player.stop()
         if not loop:
             break
         
-        print("\n🔄 Looping the song...")
+        print("\n Looping the song...")
         time.sleep(1)
     
     return False # Song finished naturally
@@ -176,7 +176,7 @@ def manage_playlists_menu(playlists):
                 
                 if not play_on_loop or user_stopped:
                     break
-                print(f"\n🔄 Playlist '{playlist_name}' finished. Looping...")
+                print(f"\n Playlist '{playlist_name}' finished. Looping...")
             
         elif action == '3':
             remove_from_playlist(playlist_name, playlists)
