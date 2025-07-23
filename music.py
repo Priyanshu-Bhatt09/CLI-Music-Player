@@ -190,7 +190,7 @@ def main_menu():
     while True:
         playlists = load_playlists()
         print("\n=====================")
-        print("  🎵 CLI Music Player 🎵")
+        print("  CLI Music Player ")
         print("=====================")
         print("1. Search for a Song")
         print("2. Manage Playlists")
